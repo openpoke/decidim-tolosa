@@ -4,13 +4,12 @@ services:
     build: .
     volumes:
       - ./entrypoint.sh:/app/entrypoint.sh
-      - ./db/seeds.rb:/app/db/seeds.rb
       - ./tmp/pids:/app/tmp/pids
     #   - .:/app
     #   - bundle:/usr/local/bundle
     #   - node_modules:/app/node_modules
     environment:
-      - DATABASE_URL=postgres://postgres:decidim@db/decidim_capitalitat
+      - DATABASE_URL=postgres://postgres:decidim@db/decidim_tolosa
       - SECRET_KEY_BASE=02b1511d769fcf6aec3a816f202e524f7c0fd12080ebd3aa18cfbb141c4d1307213124e93cba1b1547c296f00c3ccaa9a5995e5b9747ba2cf91cde0fa5a44f19
       - DECIDIM_FORCE_SSL=false
       - QUEUE_ADAPTER=sidekiq
@@ -28,7 +27,7 @@ services:
     #   - bundle:/usr/local/bundle
     #   - node_modules:/app/node_modules
     environment:
-      - DATABASE_URL=postgres://postgres:decidim@db/decidim_capitalitat
+      - DATABASE_URL=postgres://postgres:decidim@db/decidim_tolosa
       - SECRET_KEY_BASE=02b1511d769fcf6aec3a816f202e524f7c0fd12080ebd3aa18cfbb141c4d1307213124e93cba1b1547c296f00c3ccaa9a5995e5b9747ba2cf91cde0fa5a44f19
       - DECIDIM_FORCE_SSL=false
       - QUEUE_ADAPTER=sidekiq
@@ -37,7 +36,7 @@ services:
     depends_on:
       - redis
   db:
-    image: postgres:13
+    image: postgres:14
     ports:
       - "54321:5432"
     environment:
