@@ -104,10 +104,10 @@ Rails.application.configure do
     logger.formatter = config.log_formatter
     config.logger = ActiveSupport::TaggedLogging.new(logger)
   end
-  
+
   if ENV["APPSIGNAL_PUSH_API_KEY"].present?
     appsignal_logger = ActiveSupport::TaggedLogging.new(Appsignal::Logger.new("rails"))
-    if if ENV["RAILS_LOG_TO_STDOUT"].present?
+    if ENV["RAILS_LOG_TO_STDOUT"].present?
       # Use AppSignal's logger and a STDOUT logger
       logger = ActiveSupport::Logger.new($stdout)
       logger.formatter = config.log_formatter
