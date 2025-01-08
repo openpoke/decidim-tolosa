@@ -424,6 +424,8 @@ GEM
       sass (~> 3.4)
     hashdiff (1.1.2)
     hashie (5.0.0)
+    health_check (3.1.0)
+      railties (>= 5.0)
     highline (3.1.1)
       reline
     html-pipeline (2.14.3)
@@ -843,6 +845,7 @@ DEPENDENCIES
   decidim-dev!
   decidim-templates!
   decidim-term_customizer!
+  health_check
   letter_opener_web (~> 2.0)
   listen (~> 3.1)
   net-imap (~> 0.2.3)
