@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-if defined?(HealthCheck)
+if ENV.fetch("HEALTHCHECK_ADDITIONAL_CHECKS", nil)
   HealthCheck.setup do |config|
-    config.standard_checks += ["emailconf"]
+    config.standard_checks += ENV.fetch("HEALTHCHECK_ADDITIONAL_CHECKS", nil).split(" ")
   end
 end
