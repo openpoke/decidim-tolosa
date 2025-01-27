@@ -849,6 +849,7 @@ DEPENDENCIES
   decidim-dev!
   decidim-templates!
   decidim-term_customizer!
+  deface
   health_check
   letter_opener_web (~> 2.0)
   listen (~> 3.1)

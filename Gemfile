@@ -15,6 +15,7 @@ gem "decidim-templates", DECIDIM_VERSION
 gem "decidim-term_customizer", github: "mainio/decidim-module-term_customizer", branch: "l10n_main"
 
 gem "bootsnap", "~> 1.3"
+gem "deface"
 gem "health_check"
 gem "puma", ">= 6.3.1"
 
