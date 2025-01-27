@@ -37,7 +37,7 @@ if ENV.fetch("RAILS_ENV") == "production"
   preload_app!
 else
   # Development SSL
-  if ENV["DEV_SSL"] && defined?(Bundler) && (dev_gem = Bundler.load.specs.find { |spec| spec.name == "decidim-dev" })
+  if ENV.fetch("DEV_SSL", nil) && defined?(Bundler) && (dev_gem = Bundler.load.specs.find { |spec| spec.name == "decidim-dev" })
     cert_dir = ENV.fetch("DEV_SSL_DIR") { "#{dev_gem.full_gem_path}/lib/decidim/dev/assets" }
     ssl_bind(
       "0.0.0.0",

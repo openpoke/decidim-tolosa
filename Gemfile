@@ -12,7 +12,7 @@ gem "decidim", DECIDIM_VERSION
 # gem "decidim-initiatives", DECIDIM_VERSION
 gem "decidim-decidim_awesome"
 gem "decidim-templates", DECIDIM_VERSION
-gem "decidim-term_customizer", github: "mainio/decidim-module-term_customizer", branch: "main"
+gem "decidim-term_customizer", github: "mainio/decidim-module-term_customizer", branch: "l10n_main"
 
 gem "bootsnap", "~> 1.3"
 gem "health_check"
