@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/decidim-ice/decidim-module-decidim_awesome.git
-  revision: d3e3dcb19cafa5b73cf45e028d8474b646bd9f8b
-  branch: fix-leaflet-path
+  revision: 84ebe63ad748cb67691452025636ddce375e7247
+  branch: main
   specs:
     decidim-decidim_awesome (0.11.3)
       decidim-admin (>= 0.28.0, < 0.29)
