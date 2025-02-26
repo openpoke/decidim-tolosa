@@ -10,7 +10,7 @@ gem "decidim", DECIDIM_VERSION
 # gem "decidim-design", DECIDIM_VERSION
 # gem "decidim-elections", DECIDIM_VERSION
 # gem "decidim-initiatives", DECIDIM_VERSION
-gem "decidim-decidim_awesome", github: "decidim-ice/decidim-module-decidim_awesome", branch: "main"
+gem "decidim-decidim_awesome", github: "decidim-ice/decidim-module-decidim_awesome", branch: "fix-leaflet-path"
 gem "decidim-templates", DECIDIM_VERSION
 gem "decidim-term_customizer", github: "mainio/decidim-module-term_customizer", branch: "l10n_main"
 
