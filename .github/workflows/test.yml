@@ -13,18 +13,25 @@ env:
     
 jobs:
   test:
+    name: Test
     runs-on: ubuntu-latest
+    env:
+      DATABASE_USERNAME: postgres
+      DATABASE_PASSWORD: postgres
+      DATABASE_HOST: localhost
+      RUBYOPT: '-W:no-deprecated'
+      RAILS_ENV: test
     services:
       postgres:
-        image: postgres:11
-        ports:
-          - 5432:5432
+        image: postgres:14
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
         env:
-          RAILS_ENV: test
-          DATABASE_USERNAME: postgres
-          DATABASE_PASSWORD: postgres
           POSTGRES_HOST_AUTH_METHOD: trust
-        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
 
     steps:
       - uses: actions/checkout@v4
@@ -32,8 +39,8 @@ jobs:
           fetch-depth: 1
 
       - name: Install GraphicsMagick
-        run: sudo apt-get update && sudo apt-get install -y graphicsmagick
- 
+        run: sudo apt-get update && sudo apt-get install -y imagemagick
+
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ env.RUBY_VERSION }}
