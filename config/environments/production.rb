@@ -101,7 +101,6 @@ Rails.application.configure do
   # require "syslog/logger"
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
-
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     if ENV["DISABLE_SEMANTIC_LOGGER"].present? || !defined?(SemanticLogger)
       logger = ActiveSupport::Logger.new($stdout)
