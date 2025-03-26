@@ -65,6 +65,7 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "decidim_tolosa_production"
 
   config.action_mailer.perform_caching = false
+  config.action_mailer.default_url_options = { protocol: "https" }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
@@ -101,24 +102,14 @@ Rails.application.configure do
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
-    logger = ActiveSupport::Logger.new($stdout)
-    logger.formatter = config.log_formatter
-    config.logger = ActiveSupport::TaggedLogging.new(logger)
-  end
-
-  if ENV["APPSIGNAL_PUSH_API_KEY"].present?
-    appsignal_logger = ActiveSupport::TaggedLogging.new(Appsignal::Logger.new("rails"))
-    if ENV["RAILS_LOG_TO_STDOUT"].present?
-      # Use AppSignal's logger and a STDOUT logger
+    if ENV["DISABLE_SEMANTIC_LOGGER"].present? || !defined?(SemanticLogger)
       logger = ActiveSupport::Logger.new($stdout)
       logger.formatter = config.log_formatter
-      config.logger = logger.extend(ActiveSupport::Logger.broadcast(appsignal_logger))
+      config.logger = ActiveSupport::TaggedLogging.new(logger)
     else
-      config.logger = appsignal_logger
-    end
-    Sidekiq.configure_server do |config|
-      config.logger = Appsignal::Logger.new("sidekiq")
-      config.logger.formatter = Sidekiq::Logger::Formatters::WithoutTimestamp.new
+      $stdout.sync = true
+      config.rails_semantic_logger.add_file_appender = false
+      config.semantic_logger.add_appender(io: $stdout, formatter: config.rails_semantic_logger.format)
     end
   end
 
