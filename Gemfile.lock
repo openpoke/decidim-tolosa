@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/decidim-ice/decidim-module-decidim_awesome.git
-  revision: 9f4df8ff843600df5730a55f940c6b2f03c63967
+  revision: 615141f94dc5e51cc5c2834068267c75ba7966d2
   branch: release/0.28-stable
   specs:
     decidim-decidim_awesome (0.11.4)
@@ -489,7 +489,7 @@ GEM
     listen (3.9.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
-    logger (1.6.6)
+    logger (1.7.0)
     loofah (2.24.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -670,7 +670,6 @@ GEM
       actionpack (>= 5.2)
       railties (>= 5.2)
     rexml (3.4.1)
-    rorvswild (1.9.1)
     rspec (3.13.0)
       rspec-core (~> 3.13.0)
       rspec-expectations (~> 3.13.0)
@@ -752,6 +751,12 @@ GEM
     semantic_logger (4.16.1)
       concurrent-ruby (~> 1.0)
     semantic_range (3.1.0)
+    sentry-rails (5.23.0)
+      railties (>= 5.0)
+      sentry-ruby (~> 5.23.0)
+    sentry-ruby (5.23.0)
+      bigdecimal
+      concurrent-ruby (~> 1.0, >= 1.0.2)
     shakapacker (7.1.0)
       activesupport (>= 5.2)
       rack-proxy (>= 0.6.1)
@@ -866,8 +871,9 @@ DEPENDENCIES
   listen (~> 3.1)
   puma (>= 6.3.1)
   rails_semantic_logger
-  rorvswild
   rubocop-rspec (~> 2.20.0)
+  sentry-rails
+  sentry-ruby
   sidekiq
   sidekiq-cron
   web-console (~> 4.2)

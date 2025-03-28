@@ -34,8 +34,9 @@ RUN gem install bundler:$(grep -A 1 'BUNDLED WITH' Gemfile.lock | tail -n 1 | xa
     find /usr/local/bundle/ -name "*.o" -delete && \
     find /usr/local/bundle/ -name ".git" -exec rm -rf {} + && \
     find /usr/local/bundle/ -name ".github" -exec rm -rf {} + && \
-    # Remove additional unneded decidim files
-    find /usr/local/bundle/ -name "spec" -exec rm -rf {} +
+    # Remove additional unneeded decidim files
+    find /usr/local/bundle/ -name "spec" -exec rm -rf {} + && \
+    find /usr/local/bundle/ -wholename "*/decidim-dev/lib/decidim/dev/assets/*" -exec rm -rf {} +
 
 RUN npm ci
 
