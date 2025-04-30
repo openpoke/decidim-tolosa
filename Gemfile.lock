@@ -1,4 +1,14 @@
 GIT
+  remote: https://github.com/CodiTramuntana/decidim-file_authorization_handler.git
+  revision: a3dca90857be51f783678387b33e06a24376ce41
+  tag: v0.28.2.0
+  specs:
+    decidim-file_authorization_handler (0.28.2.0)
+      decidim (~> 0.28.2)
+      decidim-admin (~> 0.28.2)
+      rails (>= 5.2)
+
+GIT
   remote: https://github.com/decidim-ice/decidim-module-decidim_awesome.git
   revision: e451cc6bfcdba6cad35e383dd8b8ea001fae6914
   branch: release/0.28-stable
@@ -11,8 +21,8 @@ GIT
 
 GIT
   remote: https://github.com/decidim/decidim.git
-  revision: 1ce60cd8370e952ccb6000af38682d6901f46c98
-  branch: release/0.28-stable
+  revision: 2f557c31fe7422958a191f9591c9a52e4172c683
+  branch: chore/l10n/release/0.28-stable
   specs:
     decidim (0.28.6)
       decidim-accountability (= 0.28.6)
@@ -506,7 +516,7 @@ GEM
     mime-types (3.6.2)
       logger
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2025.0422)
+    mime-types-data (3.2025.0429)
     mini_magick (4.13.2)
     mini_mime (1.1.5)
     mini_portile2 (2.8.8)
@@ -516,7 +526,7 @@ GEM
       bigdecimal (~> 3.1)
     net-http (0.6.0)
       uri
-    net-imap (0.5.7)
+    net-imap (0.5.8)
       date
       net-protocol
     net-pop (0.1.2)
@@ -866,6 +876,7 @@ DEPENDENCIES
   decidim!
   decidim-decidim_awesome!
   decidim-dev!
+  decidim-file_authorization_handler!
   decidim-templates!
   decidim-term_customizer!
   deface
