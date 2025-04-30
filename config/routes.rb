@@ -14,5 +14,6 @@ Rails.application.routes.draw do
     resources :iframe, only: [:index]
   end
 
+  mount Decidim::FileAuthorizationHandler::AdminEngine => "/admin"
   mount Decidim::Core::Engine => "/"
 end
