@@ -41,10 +41,14 @@
 /public/decidim-packs
 /public/packs-test
 /public/sw.*
+/public/packs
+.rubocop-https*
 
 # Ignore node modules
 /node_modules
 
+# Ignore .rspec-failures
+.rspec-failures
 
 # Ignore Tailwind configuration
 tailwind.config.js
