@@ -4,12 +4,12 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-DECIDIM_VERSION = { github: "decidim/decidim", branch: "chore/l10n/release/0.28-stable" }.freeze
+DECIDIM_VERSION = "0.29.3"
 gem "decidim", DECIDIM_VERSION
-gem "decidim-decidim_awesome", github: "decidim-ice/decidim-module-decidim_awesome", branch: "release/0.28-stable"
-gem "decidim-file_authorization_handler", github: "CodiTramuntana/decidim-file_authorization_handler", tag: "v0.28.2.0"
+gem "decidim-decidim_awesome", github: "decidim-ice/decidim-module-decidim_awesome", branch: "main"
+gem "decidim-file_authorization_handler", github: "CodiTramuntana/decidim-file_authorization_handler", branch: "master"
 gem "decidim-templates", DECIDIM_VERSION
-gem "decidim-term_customizer", github: "mainio/decidim-module-term_customizer", branch: "l10n_main"
+gem "decidim-term_customizer", github: "CodiTramuntana/decidim-module-term_customizer", branch: "upgrade/decidim_0.29"
 
 gem "bootsnap", "~> 1.3"
 gem "deface"
@@ -24,7 +24,6 @@ group :development, :test do
 
   gem "brakeman", "~> 5.4"
   gem "decidim-dev", DECIDIM_VERSION
-  gem "rubocop-rspec", "~> 2.20.0"
 end
 
 group :development do

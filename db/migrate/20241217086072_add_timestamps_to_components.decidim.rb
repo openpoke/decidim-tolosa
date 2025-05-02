@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-# This migration comes from decidim (originally 20181025082245)
 
 class AddTimestampsToComponents < ActiveRecord::Migration[5.2]
   class Component < ApplicationRecord
