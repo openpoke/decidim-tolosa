@@ -4,7 +4,6 @@
   "dependencies": {
     "@decidim/browserslist-config": "file:packages/browserslist-config",
     "@decidim/core": "file:packages/core",
-    "@decidim/elections": "file:packages/elections",
     "@decidim/webpacker": "file:packages/webpacker",
     "@rails/actioncable": "^6.1.710",
     "codemirror": "^5.65.19",
@@ -18,16 +17,10 @@
   },
   "version": "0.1.0",
   "devDependencies": {
-    "@babel/eslint-parser": "^7.27.0",
-    "@babel/plugin-transform-classes": "^7.25.9",
-    "@babel/plugin-transform-regenerator": "^7.27.0",
-    "@babel/plugin-transform-runtime": "^7.26.10",
-    "@babel/preset-env": "^7.26.9",
-    "@babel/preset-react": "^7.26.3",
-    "@decidim/dev": "^0.28.4",
-    "@decidim/eslint-config": "^0.28.4",
-    "@decidim/prettier-config": "^0.28.4",
-    "@decidim/stylelint-config": "^0.28.4",
+    "@decidim/dev": "file:packages/dev",
+    "@decidim/eslint-config": "file:packages/eslint-config",
+    "@decidim/prettier-config": "file:packages/prettier-config",
+    "@decidim/stylelint-config": "file:packages/stylelint-config",
     "@tarekraafat/autocomplete.js": "^10.2.7",
     "postcss-scss": "^4.0.9",
     "sass-embedded": "~1.57.1"
