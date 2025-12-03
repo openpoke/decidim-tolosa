@@ -533,7 +533,7 @@ GEM
     invisible_captcha (0.13.0)
       rails (>= 3.2.0)
     io-console (0.8.1)
-    json (2.16.0)
+    json (2.17.0)
     jwt (3.1.2)
       base64
     kaminari (1.2.2)
