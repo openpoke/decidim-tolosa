@@ -46,6 +46,7 @@
 
 # Ignore node modules
 /node_modules
+/packages/*/node_modules
 
 # Ignore .rspec-failures
 .rspec-failures
