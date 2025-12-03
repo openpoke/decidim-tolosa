@@ -7,10 +7,6 @@ on:
       - staging
   pull_request:
 
-env:
-  RUBY_VERSION: 3.2.8
-  NODE_VERSION: 18.17.1
-    
 jobs:
   test:
     name: Test
@@ -23,7 +19,7 @@ jobs:
       RAILS_ENV: test
     services:
       postgres:
-        image: postgres:14
+        image: postgres:17-alpine
         ports: ["5432:5432"]
         options: >-
           --health-cmd pg_isready
@@ -34,7 +30,7 @@ jobs:
           POSTGRES_HOST_AUTH_METHOD: trust
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 1
 
@@ -43,7 +39,7 @@ jobs:
 
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: ${{ env.RUBY_VERSION }}
+          ruby-version: .ruby-version
           bundler-cache: true
 
       - run: bundle exec rubocop -P
