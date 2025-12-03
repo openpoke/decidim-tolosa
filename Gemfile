@@ -7,7 +7,7 @@ ruby RUBY_VERSION
 DECIDIM_VERSION = { github: "decidim/decidim", branch: "release/0.30-stable" }.freeze
 gem "decidim", DECIDIM_VERSION
 gem "decidim-decidim_awesome", github: "decidim-ice/decidim-module-decidim_awesome", branch: "main"
-gem "decidim-file_authorization_handler", github: "CodiTramuntana/decidim-file_authorization_handler", branch: "master"
+gem "decidim-file_authorization_handler", github: "openpoke/decidim-file_authorization_handler", branch: "master"
 gem "decidim-templates", DECIDIM_VERSION
 gem "decidim-term_customizer", github: "openpoke/decidim-module-term_customizer", branch: "release/0.30-stable"
 
