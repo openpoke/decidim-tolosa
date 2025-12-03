@@ -1,6 +1,7 @@
 # frozen_string_literal: true
-# This migration comes from decidim (originally 20161006085629)
 
+# This migration comes from decidim (originally 20161006085629)
+# This file has been modified by `decidim upgrade:migrations` task on 2025-12-03 09:22:16 UTC
 class AddConfirmableToDevise < ActiveRecord::Migration[5.0]
   def up
     add_column :decidim_users, :confirmation_token, :string
