@@ -1,6 +1,7 @@
 # frozen_string_literal: true
-# This migration comes from decidim (originally 20170605162500)
 
+# This migration comes from decidim (originally 20170605162500)
+# This file has been modified by `decidim upgrade:migrations` task on 2025-12-03 09:22:16 UTC
 class AddHierarchyToScopes < ActiveRecord::Migration[5.0]
   class Scope < ApplicationRecord
     self.table_name = :decidim_scopes

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
-# This migration comes from decidim_assemblies (originally 20200108123050)
 
+# This migration comes from decidim_assemblies (originally 20200108123050)
+# This file has been modified by `decidim upgrade:migrations` task on 2025-12-03 09:22:16 UTC
 # Migrates freezed assembly types to a table where to configure them
 class MigrateDecidimAssemblyTypes < ActiveRecord::Migration[5.2]
   LEGACY_TYPES = {
