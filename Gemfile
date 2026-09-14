@@ -10,6 +10,7 @@ gem "decidim-decidim_awesome", github: "decidim-ice/decidim-module-decidim_aweso
 gem "decidim-file_authorization_handler", github: "openpoke/decidim-file_authorization_handler", branch: "upgrade-0.30"
 gem "decidim-templates", DECIDIM_VERSION
 gem "decidim-term_customizer", github: "openpoke/decidim-module-term_customizer", branch: "release/0.30-stable"
+gem "decidim-pokecode", github: "openpoke/decidim-module-pokecode", branch: "release/0.30-stable"
 
 gem "bootsnap"
 gem "deface"
