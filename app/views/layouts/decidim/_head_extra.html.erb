@@ -1,3 +1,0 @@
-<% if ENV["PLAUSIBLE_URL"].present? %>
-  <script defer data-domain="<%= current_organization.host %>" src="<%= ENV["PLAUSIBLE_URL"] %>/js/script.js"></script>
-<% end %>
