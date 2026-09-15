@@ -8,8 +8,7 @@ require "rails_helper"
 checksums = [
   {
     package: "decidim-core",
-    files: {
-    }
+    files: {}
   }
 ]
 
