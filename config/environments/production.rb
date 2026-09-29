@@ -70,8 +70,7 @@ Rails.application.configure do
     :user_name => Decidim::Env.new("SMTP_USERNAME").to_s,
     :password => Decidim::Env.new("SMTP_PASSWORD").to_s,
     :domain => Decidim::Env.new("SMTP_DOMAIN").to_s,
-    :enable_starttls_auto => Decidim::Env.new("SMTP_STARTTLS_AUTO").to_boolean_string,
-    :openssl_verify_mode => "none"
+    :ssl => true
   }
 
   # "info" includes generic and useful information about system operation, but avoids logging too much
