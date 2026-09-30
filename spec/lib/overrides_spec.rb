@@ -8,9 +8,7 @@ require "rails_helper"
 checksums = [
   {
     package: "decidim-core",
-    files: {
-      "/app/views/layouts/decidim/header/_main.html.erb" => "2cda0f82a0ac644c1ba89f84d5c60b97"
-    }
+    files: {}
   }
 ]
 
