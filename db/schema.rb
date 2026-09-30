@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2026_09_14_144482) do
+ActiveRecord::Schema[7.2].define(version: 2026_09_30_083843) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
   enable_extension "pg_trgm"
@@ -336,9 +336,29 @@ ActiveRecord::Schema[7.2].define(version: 2026_09_14_144482) do
     t.datetime "granted_at", precision: nil
     t.jsonb "verification_metadata", default: {}
     t.string "verification_attachment"
+    t.integer "failed_attempts", default: 0, null: false
+    t.datetime "locked_at"
     t.index ["decidim_user_id", "name"], name: "index_decidim_authorizations_on_decidim_user_id_and_name", unique: true
     t.index ["decidim_user_id"], name: "index_decidim_authorizations_on_decidim_user_id"
     t.index ["unique_id"], name: "index_decidim_authorizations_on_unique_id"
+  end
+
+  create_table "decidim_awesome_authorization_groups", force: :cascade do |t|
+    t.bigint "decidim_organization_id", null: false
+    t.jsonb "name", default: {}, null: false
+    t.jsonb "purpose", default: {}, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["decidim_organization_id"], name: "decidim_awesome_authorization_groups_organization_id"
+  end
+
+  create_table "decidim_awesome_authorization_members", force: :cascade do |t|
+    t.string "email", null: false
+    t.bigint "authorization_group_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["authorization_group_id", "email"], name: "index_auth_members_group_email", unique: true
+    t.index ["authorization_group_id"], name: "decidim_awesome_authorization_members_authorization_group_id"
   end
 
   create_table "decidim_awesome_config", force: :cascade do |t|
@@ -1925,6 +1945,8 @@ ActiveRecord::Schema[7.2].define(version: 2026_09_14_144482) do
   add_foreign_key "decidim_authorization_transfers", "decidim_users", column: "source_user_id"
   add_foreign_key "decidim_authorization_transfers", "decidim_users", column: "user_id"
   add_foreign_key "decidim_authorizations", "decidim_users"
+  add_foreign_key "decidim_awesome_authorization_groups", "decidim_organizations"
+  add_foreign_key "decidim_awesome_authorization_members", "decidim_awesome_authorization_groups", column: "authorization_group_id"
   add_foreign_key "decidim_awesome_config_constraints", "decidim_awesome_config"
   add_foreign_key "decidim_awesome_editor_images", "decidim_organizations"
   add_foreign_key "decidim_awesome_editor_images", "decidim_users", column: "decidim_author_id"
